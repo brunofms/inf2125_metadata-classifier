@@ -5,9 +5,9 @@
 
 <div id="menu">
     <h2>MENU</h2>
-    <a href="build-model.cmd">Construir modelo</a>
+    <a href="build-model.cmd">Build Model</a>
     <br/>
-    <a href="classify-metadata.cmd">Classificar metadados</a>
+    <a href="classify-metadata.cmd">Classify Metadata</a>
     <br/>
 </div>
 

@@ -6,20 +6,18 @@ import javax.servlet.http.HttpServletResponse;
 import control.AbstractCommand;
 import control.ControlException;
 
-public class BuildModelCommand extends AbstractCommand {
+public class ClassifyMetadataCommand extends AbstractCommand {
 
 	@Override
 	protected void doCommand(HttpServletRequest request,
 			HttpServletResponse response) throws ControlException {
-
-		// TODO: Check available features
-
-		super.forward("jsp/build_model.jsp", request, response);
+		
+		super.forward("jsp/classify_metadata.jsp", request, response);
 	}
 
 	@Override
 	protected String getBasicURL() {
-		return "build-model.cmd";
+		return "classify-metadata.cmd";
 	}
 
 }

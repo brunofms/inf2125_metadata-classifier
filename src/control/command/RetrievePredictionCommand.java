@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import control.AbstractCommand;
 import control.ControlException;
 
-public class BuildModelCommand extends AbstractCommand {
+public class RetrievePredictionCommand extends AbstractCommand {
 
 	@Override
 	protected void doCommand(HttpServletRequest request,
@@ -14,12 +14,12 @@ public class BuildModelCommand extends AbstractCommand {
 
 		// TODO: Check available features
 
-		super.forward("jsp/build_model.jsp", request, response);
+		super.forward("jsp/retrieve_prediction.jsp", request, response);
 	}
 
 	@Override
 	protected String getBasicURL() {
-		return "build-model.cmd";
+		return "retrieve-prediction.cmd";
 	}
 
 }
