@@ -16,10 +16,10 @@ public class NaiveBayesStrategy implements ClassifierAlgorithm {
 	
 	private String dataset_path;
 	
-	public NaiveBayesStrategy (String dataset_path) {
+	public void setDataSetPath (String dataset_path) {
 		this.dataset_path = dataset_path;
 	}
-	
+
 	// TODO: Apply logics
 	public void classify() {
 		

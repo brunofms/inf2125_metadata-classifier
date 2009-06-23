@@ -1,5 +1,9 @@
 package control.command;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,7 +16,7 @@ public class RetrievePredictionCommand extends AbstractCommand {
 	protected void doCommand(HttpServletRequest request,
 			HttpServletResponse response) throws ControlException {
 
-		// TODO: Check available features
+		// TODO: Apply logics
 
 		super.forward("jsp/retrieve_prediction.jsp", request, response);
 	}

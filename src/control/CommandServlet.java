@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import control.command.BuildModelCommand;
+import control.command.ClassifyMetadataCommand;
+import control.command.EnableModelBuildingCommand;
 
 public class CommandServlet extends HttpServlet implements Servlet {
 
@@ -62,6 +64,12 @@ public class CommandServlet extends HttpServlet implements Servlet {
 
 		abstractCommand = new BuildModelCommand();
 		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
+		
+		abstractCommand = new ClassifyMetadataCommand();
+		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
+		
+		abstractCommand = new EnableModelBuildingCommand();
+		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
 	}
 
 	public void processRequest(HttpServletRequest request,
@@ -79,11 +87,11 @@ public class CommandServlet extends HttpServlet implements Servlet {
 				if (abstractCommand.doValidation(request)) {
 					abstractCommand.doCommand(request, response);
 				} else {
-					logger.log(Level.WARNING, "Dados inv<87>lidos: "
+					logger.log(Level.WARNING, "Dados invalidos: "
 							+ ServletUtil.getRequestURL(request));
 				}
 			} else {
-				logger.log(Level.SEVERE, "Comando n<8b>o encontrado: "
+				logger.log(Level.SEVERE, "Comando nao encontrado: "
 						+ ServletUtil.getRequestURL(request));
 				irParaPaginaErro = true;
 			}
@@ -110,9 +118,9 @@ public class CommandServlet extends HttpServlet implements Servlet {
 
 			} catch (ControlException e) {
 				try {
-					response.getWriter().write("ERRO GEN<83>RICO");
+					response.getWriter().write("Erro generico.");
 				} catch (IOException e1) {
-					logger.log(Level.SEVERE, "ERRO GEN<83>RICO.", e);
+					logger.log(Level.SEVERE, "Erro generico.", e);
 				}
 			}
 		}
