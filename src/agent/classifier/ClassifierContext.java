@@ -16,8 +16,4 @@ public class ClassifierContext {
 	public void setClassifier(ClassifierAlgorithm classifier) {
 		this.classifier = classifier;
 	}
-
-	public void setDataSetPath(String dataset_path) {
-		classifier.setDataSetPath (dataset_path);
-	}
 }

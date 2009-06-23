@@ -32,19 +32,16 @@ public class ClassifierBehavior extends SimpleBehaviour {
 			// Verify if it can start working
 			File start_file = new File("/tmp/classifier/BUILD_MODEL.properties");
 			
-			// Check for customizations
-			File product_file = new File("/tmp/classifier/PRODUCT_LINE.properties");
-			
 			if (start_file.exists()) {
 				System.out.println("Start command received.");
 				
-				Properties train_config = new Properties();
-				train_config.load(new FileInputStream(start_file));
-			
-				String dataset_path = train_config.getProperty("ARFF");
+				// Check for customizations
+				File product_file = new File("/tmp/classifier/PRODUCT_LINE.properties");
 				
 				// Product Line variability
 				Properties product_config = new Properties();
+				product_config.load(new FileInputStream(product_file));
+				
 				String classification_algorithm = 
 					product_config.getProperty("ALGORITHM");
 
@@ -53,7 +50,6 @@ public class ClassifierBehavior extends SimpleBehaviour {
 				Class t = Class.forName("agent.classifier.strategy." + classification_algorithm +"Strategy");
 				
 				context.setClassifier((ClassifierAlgorithm)t.newInstance());
-				context.setDataSetPath(dataset_path);
 				context.classifyInstances();
 				
 				// Job done
