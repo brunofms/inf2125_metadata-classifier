@@ -17,9 +17,9 @@
 				<div id="r_header">
 					<h2>Build Classification Model</h2>
 					<label>Classification Algorithm</label><br>
-						<input type="radio" name="rad_algo" id="rad_algo" value="NB" checked="checked" onchange="" />Naive Bayes
-						<input type="radio" name="rad_algo" id="rad_algo" value="SVM" onchange="" />SVM
-						<input type="radio" name="rad_algo" id="rad_algo" value="AB" onchange="" />AdaBoost
+						<input type="radio" name="algorithm_name" id="algorithm_name" value="NaiveBayes" checked="checked" onchange="" />Naive Bayes
+						<input type="radio" name="algorithm_name" id="algorithm_name" value="SVM" onchange="" />SVM
+						<input type="radio" name="algorithm_name" id="algorithm_name" value="AdaBoost" onchange="" />AdaBoost
 					<br/>
 					<br/>
 					<label>ARFF File Path</label><br>

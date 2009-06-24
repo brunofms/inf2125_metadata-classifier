@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import control.AbstractCommand;
 import control.ControlException;
 
-public class BuildModelCommand extends AbstractCommand {
+public class ModelingCommand extends AbstractCommand {
 
 	@Override
 	protected void doCommand(HttpServletRequest request,

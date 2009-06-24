@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import control.command.BuildModelCommand;
+import control.command.ModelingCommand;
 import control.command.ClassifyMetadataCommand;
-import control.command.EnableModelBuildingCommand;
+import control.command.EnableModelingCommand;
 
 public class CommandServlet extends HttpServlet implements Servlet {
 
@@ -62,13 +62,13 @@ public class CommandServlet extends HttpServlet implements Servlet {
 
 		AbstractCommand abstractCommand;
 
-		abstractCommand = new BuildModelCommand();
+		abstractCommand = new ModelingCommand();
 		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
 		
 		abstractCommand = new ClassifyMetadataCommand();
 		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
 		
-		abstractCommand = new EnableModelBuildingCommand();
+		abstractCommand = new EnableModelingCommand();
 		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
 	}
 
