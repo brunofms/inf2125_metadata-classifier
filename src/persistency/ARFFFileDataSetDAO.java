@@ -9,14 +9,6 @@ import weka.core.converters.ConverterUtils.DataSource;
 
 public class ARFFFileDataSetDAO implements DataSetDAO {
 	
-	private final static ARFFFileDataSetDAO instance = new ARFFFileDataSetDAO();
-
-	private ARFFFileDataSetDAO() {}
-
-	public final static ARFFFileDataSetDAO getInstance() {
-		return instance;
-	}
-
 	public Instances getInstances() {
 		
 		Instances data = null;

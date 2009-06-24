@@ -19,11 +19,8 @@ public class NaiveBayesStrategy implements ClassifierAlgorithm {
  		System.out.println("Building classification model: Naive Bayes");
  		
  		try {
- 			//DataSource source = new DataSource(this.dataset_path);
-			
-			//Instances data = source.getDataSet();
-			
-			Instances data = DAOFactory.getInstance().getDataSetDAO().getInstances();
+ 			
+ 			Instances data = DAOFactory.getDataSetDAO().getInstances();
 			
 			String[] filterOptions = weka.core.Utils.splitOptions(
 				"-R first-last -W 1000 -prune-rate -1.0 -N 0 -stemmer weka.core.stemmers.NullStemmer -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters ' \\r\\n\\t.,;:\\\'\\\"()?!'\"");
