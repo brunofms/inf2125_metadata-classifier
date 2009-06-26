@@ -1,4 +1,4 @@
-package agent.classifier.strategy;
+package agent.modeler.strategy;
 
 import java.util.Vector;
 

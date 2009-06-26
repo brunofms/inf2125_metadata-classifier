@@ -1,6 +1,6 @@
-package agent.classifier;
+package agent.modeler;
 
-import agent.classifier.strategy.ClassifierAlgorithm;
+import agent.modeler.strategy.ClassifierAlgorithm;
 
 public class ClassifierContext {
 	private ClassifierAlgorithm classifier = null;

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import control.command.ModelingCommand;
 import control.command.ClassifyMetadataCommand;
 import control.command.EnableModelingCommand;
+import control.command.RetrievePredictionCommand;
 
 public class CommandServlet extends HttpServlet implements Servlet {
 
@@ -69,6 +70,9 @@ public class CommandServlet extends HttpServlet implements Servlet {
 		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
 		
 		abstractCommand = new EnableModelingCommand();
+		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
+		
+		abstractCommand = new RetrievePredictionCommand();
 		COMMANDS.put(abstractCommand.getBasicURL(), abstractCommand);
 	}
 

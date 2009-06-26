@@ -14,7 +14,7 @@ public class ARFFFileDataSetDAO implements DataSetDAO {
 		Instances data = null;
 		
 		try {
-			File start_file = new File("/tmp/classifier/BUILD_MODEL.properties");
+			File start_file = new File("/tmp/classifier/MODELING.enable");
 
 			Properties train_config = new Properties();
 			train_config.load(new FileInputStream(start_file));

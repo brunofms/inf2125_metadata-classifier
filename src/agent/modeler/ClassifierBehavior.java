@@ -1,14 +1,11 @@
-package agent.classifier;
+package agent.modeler;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-//import agent.classifier.strategy.AdaBoostStrategy;
-import agent.classifier.strategy.ClassifierAlgorithm;
-//import agent.classifier.strategy.NaiveBayesStrategy;
-//import agent.classifier.strategy.SVMStrategy;
+import agent.modeler.strategy.ClassifierAlgorithm;
 
 import jade.core.Agent;
 import jade.core.behaviours.*;
@@ -30,12 +27,13 @@ public class ClassifierBehavior extends SimpleBehaviour {
 
 		try {
 			// Verify if it can start working
-			File start_file = new File("/tmp/classifier/BUILD_MODEL.properties");
+			File start_file = new File("/tmp/classifier/MODELING.enable");
 			
 			if (start_file.exists()) {
 				System.out.println("Start command received.");
 				
 				// Check for customizations
+				// TODO: Retirar daqui e colocar no build
 				File product_file = new File("/tmp/classifier/PRODUCT_LINE.properties");
 				
 				// Product Line variability

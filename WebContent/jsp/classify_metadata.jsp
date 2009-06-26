@@ -16,26 +16,32 @@
 			<div id="right">
 				<div id="r_header">
 					<h2>Classify Metadata</h2>
-					<label>Classification Model</label><br>
-						<input type="radio" name="rad_algo" id="rad_algo" value="NB" checked="checked" onchange="" />Naive Bayes
-						<input type="radio" name="rad_algo" id="rad_algo" value="SVM" onchange="" />SVM
-						<input type="radio" name="rad_algo" id="rad_algo" value="AB" onchange="" />AdaBoost
+					<label>Classification Algorithm</label><br>
+						<input type="radio" name="algorithm_name" id="algorithm_name" value="NaiveBayes" checked="checked" onchange="" />Naive Bayes
+						<input type="radio" name="algorithm_name" id="algorithm_name" value="SVM" onchange="" />SVM
+						<input type="radio" name="algorithm_name" id="algorithm_name" value="AdaBoost" onchange="" />AdaBoost
 					<br/>
 					<br/>
+					<label>Classification Model: </label>
+						<input	type="text" 
+								name="model_path" 
+								id="model_path"
+								size= "50"
+								value= "/tmp/classifier/NaiveBayes.model" /><br>
 					<label>Title: </label>
 						<input	type="text" 
-								name="title_metadata" 
-								id="title_metadata"
+								name="media_title" 
+								id="media_title"
 								size= "50" /><br>
 					<label>Abstract: </label>
 						<input	type="text" 
-								name="abstract_metadata" 
-								id="abstract_metadata"
+								name="media_abstract" 
+								id="media_abstract"
 								size= "50" /><br>
 					<label>Label: </label>
 						<input	type="text" 
-								name="label_metadata" 
-								id="label_metadata"
+								name="media_label" 
+								id="media_label"
 								size= "50"
 								height="20" />
 					<br/>
