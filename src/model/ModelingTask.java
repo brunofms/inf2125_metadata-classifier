@@ -10,5 +10,4 @@ public class ModelingTask extends Task {
 	public TaskType getTaskType() {
 		return TaskType.MODELING;
 	}
-	
 }

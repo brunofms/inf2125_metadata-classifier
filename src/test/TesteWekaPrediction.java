@@ -57,7 +57,7 @@ public class TesteWekaPrediction {
 		System.out.println("DEBUG: read model and header");
 		
 		// read model and header
-		Vector v = (Vector) SerializationHelper.read("/tmp/classifier/NB.model");
+		Vector v = (Vector) SerializationHelper.read("/tmp/classifier/NaiveBayes.model");
 		NaiveBayes nb = (NaiveBayes) v.get(0);
 		Instances header = (Instances) v.get(1);
 

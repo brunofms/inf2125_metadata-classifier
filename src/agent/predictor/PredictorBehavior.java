@@ -1,22 +1,22 @@
-package agent.modeler;
+package agent.predictor;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import agent.modeler.strategy.ClassifierAlgorithm;
+import agent.predictor.strategy.PredictorAlgorithm;
 
 import jade.core.Agent;
 import jade.core.behaviours.*;
 
-public class ClassifierBehavior extends SimpleBehaviour {  
+public class PredictorBehavior extends SimpleBehaviour {  
 	
 	private static final long serialVersionUID = 2602197650095065371L;
 
 	private boolean finished = false;
 	
-	public ClassifierBehavior(Agent a) { 
+	public PredictorBehavior(Agent a) { 
 		super(a);
 	}
 
@@ -27,7 +27,7 @@ public class ClassifierBehavior extends SimpleBehaviour {
 
 		try {
 			// Verify if it can start working
-			File start_file = new File("/tmp/classifier/MODELING.enable");
+			File start_file = new File("/tmp/classifier/PREDICTION.enable");
 			
 			if (start_file.exists()) {
 				System.out.println("Start command received.");
@@ -39,25 +39,22 @@ public class ClassifierBehavior extends SimpleBehaviour {
 				// Product Line variability
 				Properties product_config = new Properties();
 				product_config.load(new FileInputStream(product_file));
-				
-				String classification_algorithm = 
+
+				String predictor_algorithm = 
 					product_config.getProperty("ALGORITHM");
 
-				ClassifierContext context = new ClassifierContext();
+				PredictorContext context = new PredictorContext();
 
-				Class t = Class.forName("agent.classifier.strategy." + classification_algorithm +"Strategy");
-				
-				context.setClassifier((ClassifierAlgorithm)t.newInstance());
+				Class t = Class.forName("agent.predictor.strategy." + predictor_algorithm +"Strategy");
+
+				context.setClassifier((PredictorAlgorithm)t.newInstance());
 				context.classifyInstances();
-				
+
 				// Job done
 				start_file.delete();
 			}
-			else {
-				System.out.println("Waiting for start command...");
-			}
 		
-			Thread.sleep(10000);
+			Thread.sleep(50);
 			
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -1,6 +1,6 @@
-package agent.modeler.strategy;
+package agent.modeller.strategy;
 
-public class AdaBoostStrategy implements ClassifierAlgorithm {
+public class SVMStrategy implements ModellerAlgorithm {
 	
 	private String dataset_path;
 	
@@ -10,6 +10,6 @@ public class AdaBoostStrategy implements ClassifierAlgorithm {
 	
 	// TODO: Implementar l—gica
 	public void classify() {
- 		System.out.println("Building classification model: AdaBoost");
+ 		System.out.println("Building classification model: SVM");
 	}
 }

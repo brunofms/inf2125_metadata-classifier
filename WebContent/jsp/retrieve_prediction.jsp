@@ -14,8 +14,13 @@
 		<div id="left"><jsp:include page="include/inc_menu.jsp"/></div>
 		<div id="right">
 			<div id="r_header">
-				<h2>Retrieve Prediction</h2>
-				<label>Status: Processing...</label>
+				<h2>Prediction Result</h2>
+				<pre>
+				<% 
+				String predict = (String)request.getAttribute("predict");
+				out.print(predict);
+				%>
+				</pre>
 			</div>
 		</div>
 	</div>

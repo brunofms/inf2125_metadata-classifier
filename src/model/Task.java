@@ -4,6 +4,7 @@ public abstract class Task {
 	
 	private DataSet dataset;
 	private Algorithm algorithm;
+	private String results;
 	
 	public enum TaskType {MODELING, CLASSIFICATION};
 	
@@ -22,6 +23,15 @@ public abstract class Task {
 	public Algorithm getAlgorithm() {
 		return this.algorithm;
 	}
+
+	public void setResults(String results) {
+		this.results = results;
+	}
+
+	public String getResults() {
+		return this.results;
+	}
+
 
 	public abstract TaskType getTaskType();
 }

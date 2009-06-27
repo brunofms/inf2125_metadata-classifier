@@ -52,6 +52,8 @@ public class RetrievePredictionCommand extends AbstractCommand {
 	    	AbstractCommand.addError(request, e.getMessage());
 	        e.printStackTrace();
 		}
+		
+		request.setAttribute("predict", task.getResults());
 
 		super.forward("jsp/retrieve_prediction.jsp", request, response);
 	}

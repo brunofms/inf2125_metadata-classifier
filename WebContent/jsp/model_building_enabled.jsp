@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,8 +15,13 @@
 		<div id="left"><jsp:include page="include/inc_menu.jsp"/></div>
 		<div id="right">
 			<div id="r_header">
-				<h2>Building model</h2>
-				<label>Status: Processing...</label>
+				<h2>Modeling Stats</h2>
+				<pre>
+				<% 
+				String stat = (String)request.getAttribute("stat");
+				out.print(stat);
+				%>
+				</pre>
 			</div>
 		</div>
 	</div>

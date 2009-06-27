@@ -39,6 +39,8 @@ public class EnableModelingCommand extends AbstractCommand {
 	    	AbstractCommand.addError(request, e.getMessage());
 	        e.printStackTrace();
 		}
+		
+		request.setAttribute("stat", task.getResults());
 
 		// TODO: check modeling status
 		super.forward("jsp/model_building_enabled.jsp", request, response);
